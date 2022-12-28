@@ -1,7 +1,7 @@
-// Package weather for Goblinocus forecast
+// Package weather for Goblinocus forecast.
 package weather
 
-var CurrentCondition string
+var CurrentCondition string // CurrentCondition represent the current weather condition for the Forecast Function.
 var CurrentLocation string
 
 func Forecast(city, condition string) string {
