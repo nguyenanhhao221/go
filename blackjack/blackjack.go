@@ -38,5 +38,22 @@ func ParseCard(card string) int {
 func FirstTurn(card1, card2, dealerCard string) string {
 	dealerValue := ParseCard(dealerCard)
 	sumCard := ParseCard(card1) + ParseCard(card2)
-
+	if card1 == card2 && card1 == "ace" {
+		return "P"
+	}
+	switch {
+	case sumCard == 21:
+		if dealerValue == 11 || dealerValue == 10 {
+			return "S"
+		}
+		return "W"
+	case sumCard >= 17 && sumCard <= 20:
+		return "S"
+	case sumCard >= 12 && sumCard <= 16:
+		if dealerValue >= 7 {
+			return "H"
+		}
+		return "S"
+	}
+	return "H"
 }
