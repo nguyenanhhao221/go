@@ -1,15 +1,19 @@
 package electionday
 
-// First comment
 // NewVoteCounter returns a new vote counter with
 // a given number of initial votes.
 func NewVoteCounter(initialVotes int) *int {
-	panic("Please implement the NewVoteCounter() function")
+	// panic("Please implement the NewVoteCounter() function")
+	return &initialVotes
 }
 
 // VoteCount extracts the number of votes from a counter.
 func VoteCount(counter *int) int {
-	panic("Please implement the VoteCount() function")
+	// panic("Please implement the VoteCount() function")
+	if (counter) == nil {
+		return 0
+	}
+	return *counter
 }
 
 // IncrementVoteCount increments the value in a vote counter.
