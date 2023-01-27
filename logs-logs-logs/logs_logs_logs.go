@@ -1,8 +1,20 @@
 package logs
 
+var tableLookUp = map[rune]string{}
+
 // Application identifies the application emitting the given log.
 func Application(log string) string {
-	panic("Please implement the Application() function")
+	// panic("Please implement the Application() function")
+	tableLookUp['❗'] = "recommendation"
+	tableLookUp['🔍'] = "search"
+	tableLookUp['☀'] = "weather"
+	for _, char := range log {
+		value, exist := tableLookUp[char]
+		if exist {
+			return value
+		}
+	}
+	return "default"
 }
 
 // Replace replaces all occurrences of old with new, returning the modified log
